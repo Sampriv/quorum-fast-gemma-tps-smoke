@@ -1,0 +1,6 @@
+{
+  "model": "gemma-smoke-baseline",
+  "tokensPerBatch": 192,
+  "latencyMs": 118,
+  "pplPenalty": 0
+}
