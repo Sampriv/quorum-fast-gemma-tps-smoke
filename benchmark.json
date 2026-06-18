@@ -1,0 +1,35 @@
+{
+  "id": "bm_312ff621c04c1986",
+  "title": "Fast Gemma TPS Smoke",
+  "description": "Fast Gemma challenge contract pinned to the live dashboard revision. Maximize tokens/sec while staying inside the PPL guardrail.",
+  "objective": "max",
+  "runnerKind": "repo-command",
+  "upstream": {
+    "url": "https://huggingface.co/spaces/gemma-challenge/gemma-dashboard",
+    "ref": "563325d19deaf6b3fc61f5a4e4915f0a6b004128"
+  },
+  "editablePaths": [
+    "submission.json",
+    "scripts",
+    "src"
+  ],
+  "setupCommand": [
+    "bash",
+    "-lc",
+    "python3 --version"
+  ],
+  "benchmarkCommand": [
+    "bash",
+    "-lc",
+    "python3 scripts/benchmark.py"
+  ],
+  "scorePath": "score.json",
+  "scoreSchema": {
+    "score": "tps",
+    "tps": "number",
+    "ppl": "number <= 25",
+    "valid": "boolean"
+  },
+  "submit": "/api/benchmarks/bm_312ff621c04c1986/commit",
+  "apiUrl": "https://quorum-fail-k91q6wslu-samprivs-projects.vercel.app"
+}
